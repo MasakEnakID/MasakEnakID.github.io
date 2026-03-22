@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masak Enak ID</title>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e63329;
+    --orange: #f97316;
+    --yellow: #fbbf24;
+    --dark: #1a0a00;
+    --bg: #fff9f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(249,115,22,0.04) 20px,
+      rgba(249,115,22,0.04) 22px
+    );
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    background-attachment: fixed;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    width: 100%;
+    background: linear-gradient(135deg, #e63329, #f97316);
+    padding: 36px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+  }
+  .hero::before {
+    content: '🌶️🔥🍳🌶️🔥🍳🌶️🔥🍳🌶️🔥🍳';
+    position: absolute; top: 8px; left: 0; right: 0;
+    font-size: 0.85rem; opacity: 0.18; letter-spacing: 3px;
+    white-space: nowrap; pointer-events: none;
+  }
+
+  .logo-wrap {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 4px solid rgba(255,255,255,0.6);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+  .logo-wrap img {
+    width: 82px; height: 82px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Righteous', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 1.85rem);
+    color: #fff;
+    text-shadow: 2px 3px 0 rgba(0,0,0,0.2);
+    letter-spacing: 0.03em;
+  }
+  .handle {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.82rem; font-weight: 300;
+    margin-top: 2px; letter-spacing: 0.06em;
+  }
+  .tagline {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.88rem; margin-top: 6px; font-weight: 400;
+  }
+  .badges {
+    display: flex; gap: 8px; justify-content: center;
+    margin-top: 14px; flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff; font-size: 0.7rem; font-weight: 600;
+    padding: 4px 13px; border-radius: 50px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* BODY CONTENT */
+  .body-content {
+    width: 100%;
+    padding: 0 16px 16px;
+    display: flex; flex-direction: column;
+    align-items: center;
+  }
+
+  /* SECTION */
+  .section-title {
+    width: 100%;
+    display: flex; align-items: center; gap: 10px;
+    margin: 22px 0 10px;
+  }
+  .section-line { flex: 1; height: 2px; background: #ffe0cc; }
+  .section-label {
+    font-family: 'Righteous', sans-serif;
+    font-size: 0.72rem; color: var(--orange);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* LINKS */
+  .links { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+  a, a:link, a:visited, a:hover, a:active, a:focus {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    border-bottom: none;
+  }
+
+  .link-btn {
+    width: 100%;
+    background: #fff;
+    border-left: 5px solid var(--orange);
+    border-top: 1.5px solid #f5e0d0;
+    border-right: 1.5px solid #f5e0d0;
+    border-bottom: 1.5px solid #f5e0d0;
+    border-radius: 0 14px 14px 0;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 13px;
+    text-decoration: none !important;
+    color: inherit !important;
+    box-shadow: 4px 4px 0 rgba(230,51,41,0.1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+  }
+  .link-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 rgba(230,51,41,0.22);
+    border-left-width: 6px;
+  }
+  .link-btn:focus { outline: none !important; }
+
+  .link-btn.tools-1 { border-left-color: var(--red) !important; }
+  .link-btn.tools-1:hover { box-shadow: 6px 6px 0 rgba(230,51,41,0.28); }
+  .link-btn.tools-2 { border-left-color: #f59e0b !important; }
+  .link-btn.tools-2:hover { box-shadow: 6px 6px 0 rgba(245,158,11,0.28); }
+  .link-btn.ig { border-left-color: #e1306c !important; }
+  .link-btn.ig:hover { box-shadow: 6px 6px 0 rgba(225,48,108,0.25); }
+  .link-btn.wa { border-left-color: #25d366 !important; }
+  .link-btn.wa:hover { box-shadow: 6px 6px 0 rgba(37,211,102,0.25); }
+
+  .icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+  .icon.red-bg { background: #fff0ee; }
+  .icon.yellow-bg { background: #fffbea; }
+
+  .icon-ig {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+  }
+  .icon-ig svg { width: 26px; height: 26px; }
+
+  .icon-wa {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; background: #25d366;
+  }
+  .icon-wa svg { width: 28px; height: 28px; }
+
+  .link-text { flex: 1; min-width: 0; }
+  .link-title {
+    font-family: 'Righteous', sans-serif;
+    font-size: 0.92rem; color: var(--dark) !important;
+    letter-spacing: 0.02em;
+    text-decoration: none !important;
+  }
+  .link-sub {
+    color: #9a6a4a !important;
+    font-size: 0.76rem; margin-top: 2px; font-weight: 300;
+    text-decoration: none !important;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .tag {
+    font-size: 0.6rem; font-weight: 700;
+    padding: 3px 9px; border-radius: 5px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .tag-red { background: var(--red); color: #fff; }
+  .tag-new { background: var(--yellow); color: var(--dark); }
+
+
+
+  @media (max-width: 400px) {
+    .hero { padding: 30px 18px 44px; }
+    .logo-wrap { width: 84px; height: 84px; }
+    .logo-wrap img { width: 72px; height: 72px; }
+    .link-btn { padding: 13px 13px; gap: 11px; }
+    .icon, .icon-ig, .icon-wa { width: 42px; height: 42px; }
+    .link-title { font-size: 0.88rem; }
+    .link-sub { font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="hero">
+    <div class="logo-wrap">
+      <img src="https://res.cloudinary.com/dee36nxnp/image/upload/adaefse_whsmmy.png" alt="Masak Enak ID" onerror="this.style.display='none';this.parentNode.innerHTML='🍳'">
+    </div>
+    <h1>Masak Enak ID</h1>
+    <div class="handle">@masak_enak_id</div>
+    <div class="tagline">Resep Enak · Tips Dapur · Tools Keren 🔥</div>
+    <div class="badges">
+      <span class="badge">🌶 Dapur/Memasak</span>
+      <span class="badge">🍳 Home Cook</span>
+    </div>
+  </div>
+
+  <div class="body-content">
+
+    <div class="section-title">
+      <div class="section-line"></div>
+      <div class="section-label">🔧 Tools Resep Ajaib</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="links">
+      <a class="link-btn tools-1" href="https://resep-by-masak-enak-id.myscalev.com/resep-kalkulator" target="_blank" rel="noopener">
+        <div class="icon red-bg">🧮</div>
+        <div class="link-text">
+          <div class="link-title">Tools Resep Kalkulator</div>
+          <div class="link-sub">Hitung porsi & takaran bahan otomatis</div>
+        </div>
+        <span class="tag tag-red">HOT</span>
+      </a>
+
+      <a class="link-btn tools-2" href="https://resep-by-masak-enak-id.myscalev.com/kitchen-genius" target="_blank" rel="noopener">
+        <div class="icon yellow-bg">🤖</div>
+        <div class="link-text">
+          <div class="link-title">Tools Kitchen Genius</div>
+          <div class="link-sub">AI pintar bantu masak lebih mudah</div>
+        </div>
+        <span class="tag tag-new">NEW</span>
+      </a>
+    </div>
+
+    <div class="section-title">
+      <div class="section-line"></div>
+      <div class="section-label">📲 Ikuti Kami</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="links">
+      <a class="link-btn ig" href="https://instagram.com/masak_enak_id" target="_blank" rel="noopener">
+        <div class="icon-ig">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-title">Instagram</div>
+          <div class="link-sub">Konten masak setiap hari @masak_enak_id</div>
+        </div>
+      </a>
+
+      <a class="link-btn wa" href="https://wa.me/6285845435110" target="_blank" rel="noopener">
+        <div class="icon-wa">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.002 2C6.477 2 2 6.478 2 12.003c0 1.76.457 3.413 1.258 4.85L2 22l5.29-1.233A9.944 9.944 0 0 0 12.002 22C17.527 22 22 17.522 22 12.003 22 6.478 17.527 2 12.002 2zm5.322 14.298c-.226.635-1.322 1.21-1.812 1.253-.49.044-.503.385-3.168-.748-2.665-1.132-4.27-3.896-4.398-4.073-.128-.177-1.043-1.452-1.043-2.77 0-1.32.664-1.967.9-2.236.236-.27.514-.337.686-.337.171 0 .342.002.493.009.158.008.369-.06.578.46.213.535.724 1.83.787 1.962.064.132.107.286.021.46-.085.173-.128.28-.254.432-.128.153-.268.341-.383.458-.128.128-.26.267-.112.524.149.257.66 1.142 1.417 1.85.972.913 1.79 1.195 2.046 1.328.257.132.407.11.558-.066.151-.177.643-.786.815-1.056.171-.27.342-.225.578-.135.235.09 1.498.744 1.755.88.257.134.428.2.491.311.064.112.064.652-.162 1.283z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-title">WhatsApp</div>
+          <div class="link-sub">Hubungi & kerjasama · 085845435110</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

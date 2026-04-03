@@ -18,21 +18,14 @@
   html, body {
     width: 100%;
     min-height: 100vh;
-    background: var(--bg);
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 20px,
-      rgba(249,115,22,0.04) 20px,
-      rgba(249,115,22,0.04) 22px
-    );
+    background: #ffffff;
     font-family: 'Outfit', sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 0;
     -webkit-text-size-adjust: 100%;
-    background-attachment: fixed;
+
   }
 
   .card {
@@ -47,28 +40,24 @@
   /* HERO */
   .hero {
     width: 100%;
-    background: linear-gradient(135deg, #e63329, #f97316);
+    background: #ffffff;
+    border-bottom: 2px solid #f5e0d0;
     padding: 36px 24px 48px;
     text-align: center;
     position: relative;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
   }
-  .hero::before {
-    content: '🌶️🔥🍳🌶️🔥🍳🌶️🔥🍳🌶️🔥🍳';
-    position: absolute; top: 8px; left: 0; right: 0;
-    font-size: 0.85rem; opacity: 0.18; letter-spacing: 3px;
-    white-space: nowrap; pointer-events: none;
-  }
+
 
   .logo-wrap {
     width: 96px; height: 96px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 4px solid rgba(255,255,255,0.6);
+    background: #fff0ee;
+    border: 4px solid #f97316;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 14px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 30px rgba(230,51,41,0.15);
     overflow: hidden;
   }
   .logo-wrap img {
@@ -81,17 +70,17 @@
   h1 {
     font-family: 'Righteous', sans-serif;
     font-size: clamp(1.5rem, 5vw, 1.85rem);
-    color: #fff;
-    text-shadow: 2px 3px 0 rgba(0,0,0,0.2);
+    color: #5c5c5c;
+    text-shadow: none;
     letter-spacing: 0.03em;
   }
   .handle {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.82rem; font-weight: 300;
+    color: #f97316;
+    font-size: 0.82rem; font-weight: 400;
     margin-top: 2px; letter-spacing: 0.06em;
   }
   .tagline {
-    color: rgba(255,255,255,0.9);
+    color: #6b3a2a;
     font-size: 0.88rem; margin-top: 6px; font-weight: 400;
   }
   .badges {
@@ -99,9 +88,9 @@
     margin-top: 14px; flex-wrap: wrap;
   }
   .badge {
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: #fff; font-size: 0.7rem; font-weight: 600;
+    background: #fff0ee;
+    border: 1px solid #f5c4b0;
+    color: #e63329; font-size: 0.7rem; font-weight: 600;
     padding: 4px 13px; border-radius: 50px;
     letter-spacing: 0.05em; text-transform: uppercase;
   }

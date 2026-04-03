@@ -173,6 +173,30 @@
   .link-btn.wa { border-left-color: #25d366 !important; }
   .link-btn.wa:hover { box-shadow: 6px 6px 0 rgba(37,211,102,0.25); }
 
+  /* AFFILIATE BUTTON — special full-width highlight style */
+  .link-btn.affiliate {
+    border-left-color: #7c3aed !important;
+    background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);
+    border-top: 1.5px solid #ddd6fe;
+    border-right: 1.5px solid #ddd6fe;
+    border-bottom: 1.5px solid #ddd6fe;
+    box-shadow: 4px 4px 0 rgba(124,58,237,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .link-btn.affiliate::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(124,58,237,0.05));
+    pointer-events: none;
+  }
+  .link-btn.affiliate:hover {
+    box-shadow: 6px 6px 0 rgba(124,58,237,0.28);
+    border-left-width: 6px;
+  }
+
   .icon {
     width: 46px; height: 46px;
     border-radius: 12px;
@@ -182,6 +206,11 @@
   }
   .icon.red-bg { background: #fff0ee; }
   .icon.yellow-bg { background: #fffbea; }
+  .icon.purple-bg {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-color: transparent;
+    font-size: 20px;
+  }
 
   .icon-ig {
     width: 46px; height: 46px; border-radius: 12px;
@@ -205,12 +234,14 @@
     letter-spacing: 0.02em;
     text-decoration: none !important;
   }
+  .affiliate .link-title { color: #4c1d95 !important; }
   .link-sub {
     color: #9a6a4a !important;
     font-size: 0.76rem; margin-top: 2px; font-weight: 300;
     text-decoration: none !important;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
+  .affiliate .link-sub { color: #6d28d9 !important; font-weight: 400; }
 
   .tag {
     font-size: 0.6rem; font-weight: 700;
@@ -220,8 +251,15 @@
   }
   .tag-red { background: var(--red); color: #fff; }
   .tag-new { background: var(--yellow); color: var(--dark); }
-
-
+  .tag-affiliate {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: #fff;
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+  @keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124,58,237,0.4); }
+    50% { box-shadow: 0 0 0 5px rgba(124,58,237,0); }
+  }
 
   .footer {
     color: #d4906a; font-size: 0.75rem;
@@ -281,6 +319,23 @@
           <div class="link-sub">AI pintar bantu masak lebih mudah</div>
         </div>
         <span class="tag tag-new">NEW</span>
+      </a>
+    </div>
+
+    <div class="section-title">
+      <div class="section-line"></div>
+      <div class="section-label">💰 Program Affiliate</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="links">
+      <a class="link-btn affiliate" href="https://wa.me/6285845435110?text=Halo%20Masak%20Enak%20ID!%20Saya%20mau%20daftar%20program%20Affiliate%20Komisi%2050%25%20%F0%9F%99%8F" target="_blank" rel="noopener">
+        <div class="icon purple-bg">💸</div>
+        <div class="link-text">
+          <div class="link-title">Daftar Affiliate Komisi 50%</div>
+          <div class="link-sub">Promosikan & hasilkan komisi besar! 🚀</div>
+        </div>
+        <span class="tag tag-affiliate">50%</span>
       </a>
     </div>
 
